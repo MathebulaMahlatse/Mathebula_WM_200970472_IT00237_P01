@@ -1,4 +1,8 @@
 MathebulaWM200970472IT00237P01::Application.routes.draw do
+  get "errors/404"
+
+  get "errors/500"
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
@@ -57,4 +61,5 @@ MathebulaWM200970472IT00237P01::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  match '*a', :to => 'errors#404'
 end
